@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tur 3D Kencana Melati</title>
+<meta name="description" content="Tur 3D real-time dekorasi akad &amp; resepsi Zakky &amp; Nadia, Revisi V4.0.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/tur-3d.css">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="stage"></div>
+<div id="msg">Menyusun gebyok, aisle melamin, foyer, dan ribuan kuntum bunga…</div>
+
+<div class="ui top">
+  <div class="lcol">
+    <div class="brand"><b>Kencana Melati · V4.0</b><span id="sub">Zakky &amp; Nadia · Manhattan Hotel Jakarta · 12.12.2026</span></div>
+    <div class="segrow">
+      <div class="seg" role="group" aria-label="Pilih acara">
+        <button type="button" id="sRes" aria-pressed="true">Resepsi</button>
+        <button type="button" id="sAkad" aria-pressed="false">Akad</button>
+        <button type="button" id="sGal" aria-pressed="false">Galeri</button>
+      </div>
+      <div class="seg" role="group" aria-label="Mode cahaya">
+        <button type="button" id="mAmb" aria-pressed="true">Suasana</button>
+        <button type="button" id="mDoc" aria-pressed="false">Fotografi</button>
+      </div>
+      <div class="seg" role="group" aria-label="Opsi stall di kiri panggung" id="oSeg">
+        <button type="button" id="oA" aria-pressed="true">Stall A · 1</button>
+        <button type="button" id="oB" aria-pressed="false">Stall B · 2</button>
+      </div>
+    </div>
+  </div>
+  <div class="tools">
+    <a class="btn" href="index.html" aria-label="Kembali ke presentasi desain"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2h12v2H2zm0 5h12v2H2zm0 5h8v2H2z"/></svg><span class="t">Presentasi</span></a>
+    <button class="btn" id="bPlay" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path id="playIcon" d="M4 2l10 6-10 6z"/></svg><span class="t" id="playTxt">Putar tur</span></button>
+    <button class="btn" id="bCut" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 12h14v2H1zM3 6h3v5H3zm7-3h3v8h-3z"/></svg><span class="t">Buka plafon</span></button>
+    <button class="btn" id="bFig" type="button" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="3.2" r="2.2"/><path d="M4.5 15V8.2C4.5 6.6 5.8 6 8 6s3.5.6 3.5 2.2V15z"/></svg><span class="t">Figur skala</span></button>
+    <button class="btn" id="bLbl" type="button" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 3h9l5 5-5 5H1z"/></svg><span class="t">Label</span></button>
+    <button class="btn" id="bQ" type="button" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1l2 4.5 5 .5-3.8 3.3L12.3 15 8 12.4 3.7 15l1.1-5.7L1 6l5-.5z"/></svg><span class="t" id="qTxt">Kualitas tinggi</span></button>
+    <button class="btn" id="bFull" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 1h5v2H3v3H1zm9 0h5v5h-2V3h-3zM1 10h2v3h3v2H1zm12 0h2v5h-5v-2h3z"/></svg><span class="t">Layar penuh</span></button>
+  </div>
+</div>
+
+<div class="ui stops" id="stops" aria-label="Perhentian tur"></div>
+
+<div class="ui card" aria-live="polite">
+  <div class="step"><span id="cStep">1 / 16</span><span id="cZone"></span></div>
+  <h2 id="cTitle">Layout dari atas</h2>
+  <p id="cDesc"></p>
+  <span class="tag">Revisi V4.0 · moodboard 19 hlm · plafon asumsi</span>
+  <div class="nav">
+    <button class="btn" id="bPrev" type="button" aria-label="Perhentian sebelumnya"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11 2L4 8l7 6z"/></svg></button>
+    <div class="sp"><i id="cProg"></i></div>
+    <button class="btn" id="bNext" type="button" aria-label="Perhentian berikutnya"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2l7 6-7 6z"/></svg></button>
+  </div>
+</div>
+<div class="ui hint">Seret untuk melihat sekeliling · scroll atau cubit untuk zoom · panah kiri/kanan untuk berpindah perhentian</div>
+
+<script type="importmap">
+{"imports":{
+  "three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+}}
+</script>
+<script type="module" src="js/tur-3d.js"></script>
+</body>
+</html>
